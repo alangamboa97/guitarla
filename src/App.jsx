@@ -5,6 +5,7 @@ import { db } from "./data/database";
 
 function App() {
   const [data, setData] = useState([]);
+  const [cart, setCart] = useState([]);
 
   //se ejecuta cuando el componente se monta o cuando cambia el estado de auth
   useEffect(() => {
@@ -22,11 +23,12 @@ function App() {
             <Guitar
               key={guitars.id} //siempre hay que agregar id
               guitar={guitars}
+              cart={cart}
+              setCart={setCart}
             />
           ))}
         </div>
       </main>
-
       <footer className="bg-dark mt-5 py-5">
         <div className="container-xl">
           <p className="text-white text-center fs-4 mt-4 m-md-0">
